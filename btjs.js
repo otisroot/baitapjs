@@ -3,6 +3,11 @@ var a = document.getElementById('a')
 var b = document.getElementById('b')
 var c = document.getElementById('c')
 var p = document.getElementsByClassName('result')[0]
+var btnReset = document.querySelector('button[type=reset]')
+btnReset.onclick = () => {
+    location.reload()
+
+}
 btn.addEventListener('click', function() {
     changerBackground()
     checkNumberA()
