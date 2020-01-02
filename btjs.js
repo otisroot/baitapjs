@@ -11,12 +11,13 @@ btn.addEventListener('click', function() {
     var aValue = a.value
     var bValue = b.value
     var cValue = c.value
-    if (aValue == "" && bValue == "" && cValue == "") {
-        if (isNaN(aValue) && isNaN(bValue) && isNaN(cValue)) {
-            p.innerHTML = ""
-        }
+    if (isNaN(aValue) || isNaN(bValue) || isNaN(cValue)) {
+        p.innerHTML = ""
     } else {
         giaiPTBH(x, y, z)
+    }
+    if (aValue == "" || bValue == "" || cValue == "") {
+        p.innerHTML = ""
     }
 })
 
@@ -72,7 +73,7 @@ function checkNumberC() {
         if (isNaN(cValue)) {
             c.style.border = "1px solid red"
             document.getElementsByTagName('small')[2].innerText = "bạn phải nhập số "
-            document.getElementsByClassName('result')[0].innerText = ""
+            p.innerText = ""
 
         } else {
             document.getElementsByTagName('small')[2].innerText = ""
