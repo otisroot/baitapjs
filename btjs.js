@@ -8,7 +8,16 @@ btn.addEventListener('click', function() {
     checkNumberA()
     checkNumberB()
     checkNumberC()
-    giaiPTBH(x, y, z)
+    var aValue = a.value
+    var bValue = b.value
+    var cValue = c.value
+    if (aValue == "" && bValue == "" && cValue == "") {
+        if (isNaN(aValue) && isNaN(bValue) && isNaN(cValue)) {
+            p.innerHTML = ""
+        }
+    } else {
+        giaiPTBH(x, y, z)
+    }
 })
 
 function checkNumberA() {
@@ -19,7 +28,7 @@ function checkNumberA() {
         if (isNaN(aValue)) {
             a.style.border = "1px solid red"
             document.getElementsByTagName('small')[0].innerText = "bạn phải nhập số "
-            document.getElementsByClassName('result')[0].innerText = ""
+            p.innerText = ""
         } else {
             document.getElementsByTagName('small')[0].innerText = ""
             x = parseInt(aValue)
@@ -41,7 +50,7 @@ function checkNumberB() {
         if (isNaN(bValue)) {
             b.style.border = "1px solid red"
             document.getElementsByTagName('small')[1].innerText = "bạn phải nhập số "
-            document.getElementsByClassName('result')[0].innerText = ""
+            p.innerText = ""
 
         } else {
             document.getElementsByTagName('small')[1].innerText = ""
@@ -56,7 +65,7 @@ function checkNumberB() {
 }
 
 function checkNumberC() {
-    let cValue = c.value
+    let cValue = a.value
     if (!cValue == "") {
         c.style.border = "1px solid #ccc"
         document.getElementsByTagName('small')[2].innerText = ""
